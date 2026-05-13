@@ -1,0 +1,1196 @@
+{
+  "patterns": [
+    {
+      "id": "p01-max",
+      "title": "最大値更新パターン",
+      "description": "先頭の値を仮の最大値にして、配列を順に見ながら大きい値が出たら更新します。",
+      "code": [
+        "整数型の配列: score[1..5]",
+        "整数型: i, max",
+        "score ← {62, 75, 68, 91, 84}",
+        "max ← score[1]",
+        "for (i を 2 から 5 まで 1 ずつ増やす)",
+        "  if (score[i] > max)",
+        "    max ← score[i]",
+        "  endif",
+        "endfor",
+        "max を出力する"
+      ],
+      "steps": [
+        {
+          "lineIndex": 2,
+          "title": "配列を代入",
+          "note": "5人分の点数を score に代入します。",
+          "variables": [
+            { "name": "i",     "value": "未定義",                "changed": false },
+            { "name": "max",   "value": "未定義",                "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "仮の最大値をセット",
+          "note": "先頭の score[1] = 62 を max の初期値とします。",
+          "variables": [
+            { "name": "i",     "value": "未定義",                "changed": false },
+            { "name": "max",   "value": "62",                   "changed": true  },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ開始 i = 2",
+          "note": "i が 2 になりループに入ります。",
+          "variables": [
+            { "name": "i",     "value": "2",                    "changed": true  },
+            { "name": "max",   "value": "62",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 2）",
+          "note": "score[2] = 75 > max = 62 → 条件成立。if ブロックへ進みます。",
+          "variables": [
+            { "name": "i",     "value": "2",                    "changed": false },
+            { "name": "max",   "value": "62",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "最大値を更新 → 75",
+          "note": "score[2] = 75 が max より大きいので max を更新します。",
+          "variables": [
+            { "name": "i",     "value": "2",                    "changed": false },
+            { "name": "max",   "value": "75",                   "changed": true  },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 3",
+          "note": "i が 3 になり再びループ条件をチェックします。",
+          "variables": [
+            { "name": "i",     "value": "3",                    "changed": true  },
+            { "name": "max",   "value": "75",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 3）",
+          "note": "score[3] = 68 > max = 75 → 条件不成立。if ブロックをスキップします。",
+          "variables": [
+            { "name": "i",     "value": "3",                    "changed": false },
+            { "name": "max",   "value": "75",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 4",
+          "note": "i が 4 になり再びループ条件をチェックします。",
+          "variables": [
+            { "name": "i",     "value": "4",                    "changed": true  },
+            { "name": "max",   "value": "75",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 4）",
+          "note": "score[4] = 91 > max = 75 → 条件成立。if ブロックへ進みます。",
+          "variables": [
+            { "name": "i",     "value": "4",                    "changed": false },
+            { "name": "max",   "value": "75",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "最大値を更新 → 91",
+          "note": "score[4] = 91 が max より大きいので max を更新します。",
+          "variables": [
+            { "name": "i",     "value": "4",                    "changed": false },
+            { "name": "max",   "value": "91",                   "changed": true  },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 5",
+          "note": "i が 5 になり再びループ条件をチェックします。",
+          "variables": [
+            { "name": "i",     "value": "5",                    "changed": true  },
+            { "name": "max",   "value": "91",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 5）",
+          "note": "score[5] = 84 > max = 91 → 条件不成立。if ブロックをスキップします。",
+          "variables": [
+            { "name": "i",     "value": "5",                    "changed": false },
+            { "name": "max",   "value": "91",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 8,
+          "title": "ループ終了",
+          "note": "i が 5 を超えたのでループを抜けます。",
+          "variables": [
+            { "name": "i",     "value": "5",                    "changed": false },
+            { "name": "max",   "value": "91",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 9,
+          "title": "最大値を出力",
+          "note": "最大値 max = 91 を出力します。配列の中で最も大きい点数です。",
+          "variables": [
+            { "name": "i",     "value": "5",                    "changed": false },
+            { "name": "max",   "value": "91",                   "changed": false },
+            { "name": "score", "value": "{62, 75, 68, 91, 84}", "changed": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p02-count",
+      "title": "条件付きカウントパターン",
+      "description": "条件を満たす要素の個数を数えます。カウンター変数を 0 で初期化して、条件成立のたびに 1 加算します。",
+      "code": [
+        "整数型の配列: data[1..6]",
+        "整数型: i, count",
+        "data ← {3, 7, 2, 8, 5, 1}",
+        "count ← 0",
+        "for (i を 1 から 6 まで 1 ずつ増やす)",
+        "  if (data[i] >= 5)",
+        "    count ← count + 1",
+        "  endif",
+        "endfor",
+        "count を出力する"
+      ],
+      "steps": [
+        {
+          "lineIndex": 2,
+          "title": "配列を代入",
+          "note": "6つの整数を data に代入します。",
+          "variables": [
+            { "name": "i",     "value": "未定義",            "changed": false },
+            { "name": "count", "value": "未定義",            "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "カウンターを初期化",
+          "note": "count を 0 でリセットします。数える前は 0 が正しい初期値です。",
+          "variables": [
+            { "name": "i",     "value": "未定義",            "changed": false },
+            { "name": "count", "value": "0",                 "changed": true  },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ開始 i = 1",
+          "note": "i = 1 でループに入ります。",
+          "variables": [
+            { "name": "i",     "value": "1",                 "changed": true  },
+            { "name": "count", "value": "0",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 1）",
+          "note": "data[1] = 3 >= 5 → 条件不成立。count を増やしません。",
+          "variables": [
+            { "name": "i",     "value": "1",                 "changed": false },
+            { "name": "count", "value": "0",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 2",
+          "note": "i が 2 になります。",
+          "variables": [
+            { "name": "i",     "value": "2",                 "changed": true  },
+            { "name": "count", "value": "0",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 2）",
+          "note": "data[2] = 7 >= 5 → 条件成立。count を増やします。",
+          "variables": [
+            { "name": "i",     "value": "2",                 "changed": false },
+            { "name": "count", "value": "0",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "カウントアップ → 1",
+          "note": "count ← 0 + 1 = 1",
+          "variables": [
+            { "name": "i",     "value": "2",                 "changed": false },
+            { "name": "count", "value": "1",                 "changed": true  },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 3",
+          "note": "i が 3 になります。",
+          "variables": [
+            { "name": "i",     "value": "3",                 "changed": true  },
+            { "name": "count", "value": "1",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 3）",
+          "note": "data[3] = 2 >= 5 → 条件不成立。count を増やしません。",
+          "variables": [
+            { "name": "i",     "value": "3",                 "changed": false },
+            { "name": "count", "value": "1",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 4",
+          "note": "i が 4 になります。",
+          "variables": [
+            { "name": "i",     "value": "4",                 "changed": true  },
+            { "name": "count", "value": "1",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 4）",
+          "note": "data[4] = 8 >= 5 → 条件成立。count を増やします。",
+          "variables": [
+            { "name": "i",     "value": "4",                 "changed": false },
+            { "name": "count", "value": "1",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "カウントアップ → 2",
+          "note": "count ← 1 + 1 = 2",
+          "variables": [
+            { "name": "i",     "value": "4",                 "changed": false },
+            { "name": "count", "value": "2",                 "changed": true  },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 5",
+          "note": "i が 5 になります。",
+          "variables": [
+            { "name": "i",     "value": "5",                 "changed": true  },
+            { "name": "count", "value": "2",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 5）",
+          "note": "data[5] = 5 >= 5 → 条件成立（等しい場合も成立）。count を増やします。",
+          "variables": [
+            { "name": "i",     "value": "5",                 "changed": false },
+            { "name": "count", "value": "2",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "カウントアップ → 3",
+          "note": "count ← 2 + 1 = 3",
+          "variables": [
+            { "name": "i",     "value": "5",                 "changed": false },
+            { "name": "count", "value": "3",                 "changed": true  },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "ループ継続 i = 6",
+          "note": "i が 6 になります。",
+          "variables": [
+            { "name": "i",     "value": "6",                 "changed": true  },
+            { "name": "count", "value": "3",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "条件チェック（i = 6）",
+          "note": "data[6] = 1 >= 5 → 条件不成立。count を増やしません。",
+          "variables": [
+            { "name": "i",     "value": "6",                 "changed": false },
+            { "name": "count", "value": "3",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 8,
+          "title": "ループ終了",
+          "note": "i が 6 を超えたのでループを抜けます。",
+          "variables": [
+            { "name": "i",     "value": "6",                 "changed": false },
+            { "name": "count", "value": "3",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 9,
+          "title": "カウントを出力",
+          "note": "5以上の要素は 3個（7, 8, 5）でした。",
+          "variables": [
+            { "name": "i",     "value": "6",                 "changed": false },
+            { "name": "count", "value": "3",                 "changed": false },
+            { "name": "data",  "value": "{3, 7, 2, 8, 5, 1}", "changed": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p03-search",
+      "title": "線形探索パターン",
+      "description": "配列を先頭から順に調べて、目的の値があるかを探します。フラグ変数で結果を記録します。",
+      "code": [
+        "整数型の配列: data[1..5]",
+        "整数型: i, target",
+        "論理型: found",
+        "data ← {4, 2, 7, 1, 9}",
+        "target ← 7",
+        "found ← false",
+        "for (i を 1 から 5 まで 1 ずつ増やす)",
+        "  if (data[i] = target)",
+        "    found ← true",
+        "  endif",
+        "endfor",
+        "found を出力する"
+      ],
+      "steps": [
+        {
+          "lineIndex": 3,
+          "title": "配列を代入",
+          "note": "5つの整数を data に代入します。",
+          "variables": [
+            { "name": "i",      "value": "未定義",       "changed": false },
+            { "name": "target", "value": "未定義",       "changed": false },
+            { "name": "found",  "value": "未定義",       "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "探す値をセット",
+          "note": "target に 7 をセットします。この値を配列の中から探します。",
+          "variables": [
+            { "name": "i",      "value": "未定義",       "changed": false },
+            { "name": "target", "value": "7",            "changed": true  },
+            { "name": "found",  "value": "未定義",       "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "フラグを初期化",
+          "note": "found を false（未発見）で初期化します。",
+          "variables": [
+            { "name": "i",      "value": "未定義",       "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "false",        "changed": true  },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "ループ開始 i = 1",
+          "note": "i = 1 でループに入ります。",
+          "variables": [
+            { "name": "i",      "value": "1",            "changed": true  },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "false",        "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "条件チェック（i = 1）",
+          "note": "data[1] = 4 = target = 7 → 条件不成立。found は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "1",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "false",        "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "ループ継続 i = 2",
+          "note": "i が 2 になります。",
+          "variables": [
+            { "name": "i",      "value": "2",            "changed": true  },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "false",        "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "条件チェック（i = 2）",
+          "note": "data[2] = 2 = target = 7 → 条件不成立。found は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "2",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "false",        "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "ループ継続 i = 3",
+          "note": "i が 3 になります。",
+          "variables": [
+            { "name": "i",      "value": "3",            "changed": true  },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "false",        "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "条件チェック（i = 3）",
+          "note": "data[3] = 7 = target = 7 → 条件成立！発見しました。",
+          "variables": [
+            { "name": "i",      "value": "3",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "false",        "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 8,
+          "title": "発見！found ← true",
+          "note": "target が見つかったので found を true に変えます。",
+          "variables": [
+            { "name": "i",      "value": "3",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "true",         "changed": true  },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "ループ継続 i = 4",
+          "note": "found が true でもループは最後まで続きます。",
+          "variables": [
+            { "name": "i",      "value": "4",            "changed": true  },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "true",         "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "条件チェック（i = 4）",
+          "note": "data[4] = 1 = target = 7 → 条件不成立。found は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "4",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "true",         "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "ループ継続 i = 5",
+          "note": "i が 5 になります。",
+          "variables": [
+            { "name": "i",      "value": "5",            "changed": true  },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "true",         "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "条件チェック（i = 5）",
+          "note": "data[5] = 9 = target = 7 → 条件不成立。found は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "5",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "true",         "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 10,
+          "title": "ループ終了",
+          "note": "全要素を確認しました。",
+          "variables": [
+            { "name": "i",      "value": "5",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "true",         "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 11,
+          "title": "結果を出力",
+          "note": "found = true → 7 は配列の中に存在しました（data[3]）。",
+          "variables": [
+            { "name": "i",      "value": "5",            "changed": false },
+            { "name": "target", "value": "7",            "changed": false },
+            { "name": "found",  "value": "true",         "changed": false },
+            { "name": "data",   "value": "{4, 2, 7, 1, 9}", "changed": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p04-flag",
+      "title": "フラグ判定パターン",
+      "description": "「全要素が条件を満たすか」をフラグで判定します。最初に true をセットし、条件を外れる要素が見つかったら false に変えます。",
+      "code": [
+        "整数型の配列: data[1..5]",
+        "整数型: i",
+        "論理型: allPos",
+        "data ← {3, 5, -1, 8, 2}",
+        "allPos ← true",
+        "for (i を 1 から 5 まで 1 ずつ増やす)",
+        "  if (data[i] <= 0)",
+        "    allPos ← false",
+        "  endif",
+        "endfor",
+        "allPos を出力する"
+      ],
+      "steps": [
+        {
+          "lineIndex": 3,
+          "title": "配列を代入",
+          "note": "5つの整数を data に代入します。-1 が含まれています。",
+          "variables": [
+            { "name": "i",      "value": "未定義",         "changed": false },
+            { "name": "allPos", "value": "未定義",         "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "フラグを初期化",
+          "note": "allPos を true（全部正）で初期化します。反例が見つかれば false にします。",
+          "variables": [
+            { "name": "i",      "value": "未定義",         "changed": false },
+            { "name": "allPos", "value": "true",           "changed": true  },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "ループ開始 i = 1",
+          "note": "i = 1 でループに入ります。",
+          "variables": [
+            { "name": "i",      "value": "1",              "changed": true  },
+            { "name": "allPos", "value": "true",           "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "条件チェック（i = 1）",
+          "note": "data[1] = 3 <= 0 → 条件不成立。allPos は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "1",              "changed": false },
+            { "name": "allPos", "value": "true",           "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "ループ継続 i = 2",
+          "note": "i が 2 になります。",
+          "variables": [
+            { "name": "i",      "value": "2",              "changed": true  },
+            { "name": "allPos", "value": "true",           "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "条件チェック（i = 2）",
+          "note": "data[2] = 5 <= 0 → 条件不成立。allPos は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "2",              "changed": false },
+            { "name": "allPos", "value": "true",           "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "ループ継続 i = 3",
+          "note": "i が 3 になります。data[3] は -1 です。",
+          "variables": [
+            { "name": "i",      "value": "3",              "changed": true  },
+            { "name": "allPos", "value": "true",           "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "条件チェック（i = 3）",
+          "note": "data[3] = -1 <= 0 → 条件成立！0以下の値を発見しました。",
+          "variables": [
+            { "name": "i",      "value": "3",              "changed": false },
+            { "name": "allPos", "value": "true",           "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "フラグを false に変更",
+          "note": "0以下の値が見つかったので allPos を false にします。",
+          "variables": [
+            { "name": "i",      "value": "3",              "changed": false },
+            { "name": "allPos", "value": "false",          "changed": true  },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "ループ継続 i = 4",
+          "note": "フラグが false になってもループは続きます。",
+          "variables": [
+            { "name": "i",      "value": "4",              "changed": true  },
+            { "name": "allPos", "value": "false",          "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "条件チェック（i = 4）",
+          "note": "data[4] = 8 <= 0 → 条件不成立。allPos は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "4",              "changed": false },
+            { "name": "allPos", "value": "false",          "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "ループ継続 i = 5",
+          "note": "i が 5 になります。",
+          "variables": [
+            { "name": "i",      "value": "5",              "changed": true  },
+            { "name": "allPos", "value": "false",          "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "条件チェック（i = 5）",
+          "note": "data[5] = 2 <= 0 → 条件不成立。allPos は変わりません。",
+          "variables": [
+            { "name": "i",      "value": "5",              "changed": false },
+            { "name": "allPos", "value": "false",          "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 9,
+          "title": "ループ終了",
+          "note": "全要素を確認しました。",
+          "variables": [
+            { "name": "i",      "value": "5",              "changed": false },
+            { "name": "allPos", "value": "false",          "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 10,
+          "title": "結果を出力",
+          "note": "allPos = false → 全要素が正ではありませんでした（data[3] = -1 が反例）。",
+          "variables": [
+            { "name": "i",      "value": "5",              "changed": false },
+            { "name": "allPos", "value": "false",          "changed": false },
+            { "name": "data",   "value": "{3, 5, -1, 8, 2}", "changed": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p05-nested",
+      "title": "二重ループパターン",
+      "description": "外側と内側の 2 つのループを組み合わせます。外側が 1 回進むたびに内側が最初から回ります。",
+      "code": [
+        "整数型: i, j, total",
+        "total ← 0",
+        "for (i を 1 から 3 まで 1 ずつ増やす)",
+        "  for (j を 1 から 3 まで 1 ずつ増やす)",
+        "    total ← total + (i × j)",
+        "  endfor",
+        "endfor",
+        "total を出力する"
+      ],
+      "steps": [
+        {
+          "lineIndex": 1,
+          "title": "total を初期化",
+          "note": "total ← 0 でリセットします。",
+          "variables": [
+            { "name": "i",     "value": "未定義", "changed": false },
+            { "name": "j",     "value": "未定義", "changed": false },
+            { "name": "total", "value": "0",      "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 2,
+          "title": "外側ループ開始 i = 1",
+          "note": "外側のループに入ります。i = 1",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": true  },
+            { "name": "j",     "value": "未定義", "changed": false },
+            { "name": "total", "value": "0",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 1",
+          "note": "内側のループに入ります。j = 1",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": false },
+            { "name": "j",     "value": "1",      "changed": true  },
+            { "name": "total", "value": "0",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=1, j=1）",
+          "note": "total ← 0 + (1 × 1) = 1",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": false },
+            { "name": "j",     "value": "1",      "changed": false },
+            { "name": "total", "value": "1",      "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 2",
+          "note": "j = 2",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": false },
+            { "name": "j",     "value": "2",      "changed": true  },
+            { "name": "total", "value": "1",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=1, j=2）",
+          "note": "total ← 1 + (1 × 2) = 3",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": false },
+            { "name": "j",     "value": "2",      "changed": false },
+            { "name": "total", "value": "3",      "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 3",
+          "note": "j = 3",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": true  },
+            { "name": "total", "value": "3",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=1, j=3）",
+          "note": "total ← 3 + (1 × 3) = 6",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "6",      "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "内側ループ終了（i=1）",
+          "note": "j が 3 を超えたので内側ループを抜けます。外側ループに戻ります。",
+          "variables": [
+            { "name": "i",     "value": "1",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "6",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 2,
+          "title": "外側ループ i = 2",
+          "note": "i = 2 で外側ループを続けます。",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": true  },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "6",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 1（リセット）",
+          "note": "i が変わると j は 1 から再スタートします。",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": false },
+            { "name": "j",     "value": "1",      "changed": true  },
+            { "name": "total", "value": "6",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=2, j=1）",
+          "note": "total ← 6 + (2 × 1) = 8",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": false },
+            { "name": "j",     "value": "1",      "changed": false },
+            { "name": "total", "value": "8",      "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 2",
+          "note": "j = 2",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": false },
+            { "name": "j",     "value": "2",      "changed": true  },
+            { "name": "total", "value": "8",      "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=2, j=2）",
+          "note": "total ← 8 + (2 × 2) = 12",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": false },
+            { "name": "j",     "value": "2",      "changed": false },
+            { "name": "total", "value": "12",     "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 3",
+          "note": "j = 3",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": true  },
+            { "name": "total", "value": "12",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=2, j=3）",
+          "note": "total ← 12 + (2 × 3) = 18",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "18",     "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "内側ループ終了（i=2）",
+          "note": "j が 3 を超えたので内側ループを抜けます。外側ループに戻ります。",
+          "variables": [
+            { "name": "i",     "value": "2",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "18",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 2,
+          "title": "外側ループ i = 3",
+          "note": "i = 3 で外側ループを続けます。",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": true  },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "18",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 1（リセット）",
+          "note": "i が変わると j は 1 から再スタートします。",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "1",      "changed": true  },
+            { "name": "total", "value": "18",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=3, j=1）",
+          "note": "total ← 18 + (3 × 1) = 21",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "1",      "changed": false },
+            { "name": "total", "value": "21",     "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 2",
+          "note": "j = 2",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "2",      "changed": true  },
+            { "name": "total", "value": "21",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=3, j=2）",
+          "note": "total ← 21 + (3 × 2) = 27",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "2",      "changed": false },
+            { "name": "total", "value": "27",     "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "内側ループ j = 3",
+          "note": "j = 3",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": true  },
+            { "name": "total", "value": "27",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "加算（i=3, j=3）",
+          "note": "total ← 27 + (3 × 3) = 36",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "36",     "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "内側ループ終了（i=3）",
+          "note": "j が 3 を超えたので内側ループを抜けます。",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "36",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "外側ループ終了",
+          "note": "i が 3 を超えたので外側ループを抜けます。",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "36",     "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "total を出力",
+          "note": "1×1 + 1×2 + … + 3×3 = 36 を出力します。",
+          "variables": [
+            { "name": "i",     "value": "3",      "changed": false },
+            { "name": "j",     "value": "3",      "changed": false },
+            { "name": "total", "value": "36",     "changed": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p06-swap",
+      "title": "交換と並べ替えパターン",
+      "description": "隣り合う要素を比較して、順序が逆なら交換します。一時変数 tmp を使って値を壊さずに入れ替えるのがポイントです。",
+      "code": [
+        "整数型の配列: data[1..4]",
+        "整数型: i, tmp",
+        "data ← {3, 1, 4, 2}",
+        "for (i を 1 から 3 まで 1 ずつ増やす)",
+        "  if (data[i] > data[i+1])",
+        "    tmp ← data[i]",
+        "    data[i] ← data[i+1]",
+        "    data[i+1] ← tmp",
+        "  endif",
+        "endfor",
+        "data を出力する"
+      ],
+      "steps": [
+        {
+          "lineIndex": 2,
+          "title": "配列を代入",
+          "note": "4つの整数を data に代入します。",
+          "variables": [
+            { "name": "i",    "value": "未定義",      "changed": false },
+            { "name": "tmp",  "value": "未定義",      "changed": false },
+            { "name": "data", "value": "{3, 1, 4, 2}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "ループ開始 i = 1",
+          "note": "i = 1 でループに入ります。",
+          "variables": [
+            { "name": "i",    "value": "1",           "changed": true  },
+            { "name": "tmp",  "value": "未定義",      "changed": false },
+            { "name": "data", "value": "{3, 1, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "条件チェック（i = 1）",
+          "note": "data[1] = 3 > data[2] = 1 → 条件成立。交換します。",
+          "variables": [
+            { "name": "i",    "value": "1",           "changed": false },
+            { "name": "tmp",  "value": "未定義",      "changed": false },
+            { "name": "data", "value": "{3, 1, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "tmp に data[1] を退避",
+          "note": "tmp ← 3（data[1] の値を一時保存します）",
+          "variables": [
+            { "name": "i",    "value": "1",           "changed": false },
+            { "name": "tmp",  "value": "3",           "changed": true  },
+            { "name": "data", "value": "{3, 1, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "data[1] ← data[2]",
+          "note": "data[1] ← 1（data[2] の値を代入）。data = {1, 1, 4, 2}",
+          "variables": [
+            { "name": "i",    "value": "1",           "changed": false },
+            { "name": "tmp",  "value": "3",           "changed": false },
+            { "name": "data", "value": "{1, 1, 4, 2}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "data[2] ← tmp",
+          "note": "data[2] ← tmp = 3（退避した値を代入）。data = {1, 3, 4, 2}",
+          "variables": [
+            { "name": "i",    "value": "1",           "changed": false },
+            { "name": "tmp",  "value": "3",           "changed": false },
+            { "name": "data", "value": "{1, 3, 4, 2}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "ループ継続 i = 2",
+          "note": "i = 2 でループを続けます。",
+          "variables": [
+            { "name": "i",    "value": "2",           "changed": true  },
+            { "name": "tmp",  "value": "3",           "changed": false },
+            { "name": "data", "value": "{1, 3, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "条件チェック（i = 2）",
+          "note": "data[2] = 3 > data[3] = 4 → 条件不成立。交換しません。",
+          "variables": [
+            { "name": "i",    "value": "2",           "changed": false },
+            { "name": "tmp",  "value": "3",           "changed": false },
+            { "name": "data", "value": "{1, 3, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 3,
+          "title": "ループ継続 i = 3",
+          "note": "i = 3 でループを続けます。",
+          "variables": [
+            { "name": "i",    "value": "3",           "changed": true  },
+            { "name": "tmp",  "value": "3",           "changed": false },
+            { "name": "data", "value": "{1, 3, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 4,
+          "title": "条件チェック（i = 3）",
+          "note": "data[3] = 4 > data[4] = 2 → 条件成立。交換します。",
+          "variables": [
+            { "name": "i",    "value": "3",           "changed": false },
+            { "name": "tmp",  "value": "3",           "changed": false },
+            { "name": "data", "value": "{1, 3, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 5,
+          "title": "tmp に data[3] を退避",
+          "note": "tmp ← 4（data[3] の値を一時保存します）",
+          "variables": [
+            { "name": "i",    "value": "3",           "changed": false },
+            { "name": "tmp",  "value": "4",           "changed": true  },
+            { "name": "data", "value": "{1, 3, 4, 2}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 6,
+          "title": "data[3] ← data[4]",
+          "note": "data[3] ← 2（data[4] の値を代入）。data = {1, 3, 2, 2}",
+          "variables": [
+            { "name": "i",    "value": "3",           "changed": false },
+            { "name": "tmp",  "value": "4",           "changed": false },
+            { "name": "data", "value": "{1, 3, 2, 2}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 7,
+          "title": "data[4] ← tmp",
+          "note": "data[4] ← tmp = 4（退避した値を代入）。data = {1, 3, 2, 4}",
+          "variables": [
+            { "name": "i",    "value": "3",           "changed": false },
+            { "name": "tmp",  "value": "4",           "changed": false },
+            { "name": "data", "value": "{1, 3, 2, 4}", "changed": true  }
+          ]
+        },
+        {
+          "lineIndex": 9,
+          "title": "ループ終了",
+          "note": "i が 3 を超えたのでループを抜けます。1回のパスが完了しました。",
+          "variables": [
+            { "name": "i",    "value": "3",           "changed": false },
+            { "name": "tmp",  "value": "4",           "changed": false },
+            { "name": "data", "value": "{1, 3, 2, 4}", "changed": false }
+          ]
+        },
+        {
+          "lineIndex": 10,
+          "title": "結果を出力",
+          "note": "1回のパスで隣接要素を整理しました。data = {1, 3, 2, 4}",
+          "variables": [
+            { "name": "i",    "value": "3",           "changed": false },
+            { "name": "tmp",  "value": "4",           "changed": false },
+            { "name": "data", "value": "{1, 3, 2, 4}", "changed": false }
+          ]
+        }
+      ]
+    }
+  ]
+}
